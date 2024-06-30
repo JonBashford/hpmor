@@ -1,47 +1,91 @@
-\input{layout/hp-title}
-\ifcover%
-\newpagecolor{black}\afterpage{\restorepagecolor}
-\newcommand\BackgroundPic{
-\put(0,0){%
-\parbox[b][\paperheight]{\paperwidth}{%
-\vfill%
-\centering%
-\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{images/cover0.jpg}%
-\vfill%
-}}}\AddToShipoutPicture*{\BackgroundPic}%
-\AddToShipoutPicture*{\put(0,0){%
-\parbox[b][\paperheight]{\paperwidth}{%
-\hptitle{\fullvolumetitle{\volumenumber}}%
-}}}%
-\ %
+% full color cover page 
+% \input{layout/hp-title}
+% \ifcover%
+% \newpagecolor{black}\afterpage{\restorepagecolor}
+% \newcommand\BackgroundPic{
+% \put(0,0){%
+% \parbox[b][\paperheight]{\paperwidth}{%
+% \vfill%
+% \centering%
+% \includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{images/cover0.jpg}%
+% \vfill%
+% }}}\AddToShipoutPicture*{\BackgroundPic}%
+% \AddToShipoutPicture*{\put(0,0){%
+% \parbox[b][\paperheight]{\paperwidth}{%
+% \hptitle{\fullvolumetitle{\volumenumber}}%
+% }}}%
+% \ %
+% \cleartorecto
+
+% Half-title page
 \cleartorecto
+\thispagestyle{empty}
+\vspace*{0pt}
+\begin{center}
+\normalsize
+\lumos{\hpBookChar}\par
+\lumos{and the }\lumos{\hpBookTitle}
+\end{center}
+\clearpage
+
+% Series page
+\thispagestyle{empty}
+\begin{vplace}
+\begin{center}
+\small Harry Potter and the Methods of Rationality
+\par
+\vspace*{1cm}
+\normalsize
+\newcounter{seriesCounter}
+\def\hpSeriesBook#1#2{  
+	\stepcounter{seriesCounter}
+	{\hp\Roman{seriesCounter}}\par
+	#1\par and the #2\bigskip\par
+}
+\hpSeriesBook{Harry James Potter-Evans-Verres}{Methods of Rationality}
+\hpSeriesBook{Harry James Potter-Evans-Verres}{Legion of Doom}
+\hpSeriesBook{Harry James Potter-Evans-Verres}{Shadows of Death}
+\hpSeriesBook{Hermione Jean Granger}{Phoenix's Call}
+\hpSeriesBook{Harry James Potter-Evans-Verres}{Last Enemy}
+\hpSeriesBook{Harry James Potter-Evans-Verres}{Philosopher's Stone}
+\end{center}
+\end{vplace}
+
 \fi
+
+% Title page
 \begin{center}
 \thispagestyle{empty}
 {\hpfont
-\Huge\MakeUppercase{Harry Potter}\vspace*{0.5cm}
+\Huge\MakeUppercase{\hpBookChar}\vspace*{0.5cm}
 
-\Large\MakeUppercase{and the Methods of Rationality} %
+\normalsize\MakeUppercase{and the}\par
 
+\Huge\MakeUppercase{\hpBookTitle} %
+
+% snapping fingers graphic
 \includegraphics[scale=0.5]{images/bubble0.jpg}
 
-\Large BY \vspace*{.25cm}
+\large Book \Numberstringnum{\hpBookNo} of \\
+Harry Potter and the Methods of Rationality \vspace*{.25cm}
 
 \huge \MakeUppercase{Eliezer Yudkowsky}%
 
-\normalsize
+\vspace*{1.5cm}
+\Large \hpBookChapters
 
-\vspace*{1\baselineskip}
-\fullvolumetitle{\volumenumber}
+\vspace*{0.5cm}
+\scriptsize \hpBookOther \normalsize
+
+\end{center}
+
+% \vspace*{1\baselineskip}
+% \fullvolumetitle{\volumenumber}
 }
 
 \vfill
 Find the original text, with author’s notes, fan art and other info at:\\
 \url{http://hpmor.com}
-
-Home of this revised e-book version is:\\
-\url{https://github.com/rrthomas/hpmor/}
-\end{center}
 
 \cleartoverso
 
@@ -80,7 +124,7 @@ and her books:
 \end{center}
 \cleartorecto% FIXME: For some reason, without this the contents ends up on a verso page (an extra blank page is added)
 
-% \chapter{Disclaimer}
+% Disclaimer
 \newpage
 \vspace*{4cm}
 \begin{center}

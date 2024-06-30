@@ -2,17 +2,43 @@
 
 \begin{document}
 {
+\newcommand{\hpBookNo}{1}
+\newcommand{\hpBookChar}{Harry James Potter-{\kern 2pt}Evans-{\kern 4pt}Verres}
+\newcommand{\hpBookTitle}{Methods of Rationality}
+\newcommand{\hpBookChapters}{Chapters 1--21}
+\newcommand{\hpBookOther}{including an edited version of %
+Daystar's Remix of Rationality, chapters 1--4 \\%
+\url{http://www.fanfiction.net/s/9676374}
 \pagestyle{empty}
-\input{layout/hpmor-title-1}
+% \input{layout/hpmor-title-1}
 \input{layout/hp-intro}
 \pagenumbering{gobble}
 \input{layout/hp-contents}
 \cleartorecto
+\pagenumbering{roman}
+\setcounter{page}{1}
+\input{chapters/hpmor-chapter-000}
+\cleartorecto
 }
+
+\thispagestyle{empty}
+\begin{vplace}[.27]
+    \itshape\small
+    \parindent=0pt
+    Beneath the moonlight glints a tiny fragment of silver, a fraction of a line{\el}
+
+    \medskip
+    (black robes, falling)
+
+    \medskip
+    {\el} blood spills out in litres, and someone screams a word.
+\end{vplace}
+
+\mainmatter
+
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-\include{chapters/hpmor-chapter-000}
 \include{chapters/hpmor-chapter-001}
 \include{chapters/hpmor-chapter-002}
 \include{chapters/hpmor-chapter-003}
