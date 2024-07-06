@@ -1,15 +1,19 @@
 # Harry Potter and the Methods Of Rationality
 
-<https://github.com/rrthomas/hpmor>
-Maintainer: Reuben Thomas <rrt@sc3d.org>
-
 A LaTeX version of [the popular didactic fan-fiction](http://www.hpmor.com)
 by Eliezer Yudkowsky, which can make e-books in PDF, ePub and Mobi formats,
 and six PDF volumes that can be printed and bound. There are also dust
 jackets for the printable volumes.
 
+This version of HPMOR is edited by Jonathon Bashford to incorporate
+an edited version of Daystar's Remix of Rationality (chapters 1-4),
+eliminate the epigraphs that appear with the earlier chapters,
+fold in additional Britpicks, and make certain other editorial changes
+to the introductory and ending materials. New covers have also been generated,
+drawing from the prior contributions of Ian Storm Taylor, Lily Yao Lu, and ForeChin99.
+
 See [latest release](https://github.com/rrthomas/hpmor/releases/latest)
-for PDF and e-book downloads.
+for official PDF and e-book downloads maintained by Reuben Thomas <rrt@sc3d.org>
 
 TeXLive 2015 or later and git are required to build the book. (Note: the
 book must be built from a git checkout.)
@@ -18,8 +22,8 @@ Note: the Omake Files chapters (11 and 64) have been moved to the end of the
 single-file PDF. Those chapter numbers are omitted in the text, so chapter
 10 is followed by chapter 12, for example. In the six-volume PDFs, all
 chapters are renumbered to start from 1 at the start of a book, and there are
-no appendices. Some epigraphs have been omitted but are in the source files
-of the chapters.
+no appendices. The epigraphs and author's notes which are omitted from the text
+are in the source files of the chapters.
 
 ## Files
 
@@ -86,31 +90,6 @@ top directory use the command:
 
 `latexmk -norc -e '$chapterfile="FILENAME"' -r latexmkrc -g FILENAME`
 
-## Contributing
-
-Contributions are most welcome. These fall into the following categories:
-
-1. Textual corrections (where the text differs from the online original
-   unintentionally).
-2. Textual improvements: fixing straight-up errors in the English (or
-   deeper, the sense, story etc.), or “Britfixing”, i.e. replacing
-   non-British usages.
-3. Design and typography. Improvements to both the PDF and print versions of
-   the books are encouraged. See the GitHub bug-tracker for known issues;
-   also, search the sources for “FIXME”.
-4. Translations. Translations are of course most welcome! A list of known
-   translations and one or two hints are given below in the
-   [next section](#translations).
-
-For textual changes other than simple typo or language fixes, please
-familiarise yourself with the style guide (below).
-
-The preferred way to submit any improvement is as a GitHub pull request.
-Textual corrections can also be submitted as issues in the issue tracker, or
-by email to the maintainer.
-
-For the GitHub URL, and email address of the maintainer, see above.
-
 ## Style guide
 
 ### Spelling
@@ -176,26 +155,6 @@ These are macros defined in `layout/hp-markup.tex`. You should glance
 through that file to see what commands are available, and use them instead
 of direct markup; for example `\shout` rather than `\textsc`.
 
-## Translations
-
-To translate the book, it is recommended to fork this repository, and check
-back from time to time for updates. Also, do open an issue or PR against
-this file to add the translation!
-
-It is recommended to use `polyglossia` (not `babel`).
-
-### Known translations
-
-Note: there are other translations of HPMOR; here are listed only
-translations of this edition.
-
-* [French](https://github.com/yeKcim/hpmor) (complete)
-* [German](https://github.com/entorb/hpmor-de) (complete)
-
-<!--  LocalWords:  hpmor tex hp txt latexmkrc latexmk GNUMakefile 80gsm '
- -->
-<!--  LocalWords:  norc nocover N' NNN chapterfile FILENAME' Britfixing dir
- -->
 <!--  LocalWords:  Eeeehhhh el partchapter namedpartchapter lettrine adma
  -->
 <!--  LocalWords:  textsc
